@@ -26,6 +26,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.image = successIcon
         statusItem.menu = onlineMenu
         
+        // change time to suit yourself
         let sec = 5.0
         self.timer = NSTimer.scheduledTimerWithTimeInterval(sec, target: self, selector: "onTimerUpdate", userInfo: nil, repeats: true)
         self.timer?.fire()
@@ -54,28 +55,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSApplication.sharedApplication().terminate(sender)
     }
     
-
-//    @IBAction func menuClicked(sender: NSMenuItem) {
-//
-//        let task = NSTask()
-//        task.launchPath = "/usr/bin/defaults"
-//        
-//        if(sender.state == NSOnState){
-//            task.arguments = ["write", "com.apple.finder", "AppleShowAllFiles", "NO"]
-//            sender.state = NSOffState
-//        }else{
-//            task.arguments = ["write", "com.apple.finder", "AppleShowAllFiles", "YES"]
-//            sender.state = NSOnState
-//        }
-//        
-//        task.launch()
-//        task.waitUntilExit()
-//        
-//        let killFinder = NSTask()
-//        killFinder.launchPath = "/usr/bin/killall"
-//        killFinder.arguments = ["Finder"]
-//        killFinder.launch()
-//    }
 
 }
 
