@@ -13,6 +13,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
     var timer:NSTimer?
+    @IBOutlet weak var onlineMenu: NSMenu!
     
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-1)
 
@@ -23,8 +24,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 //        successIcon?.setTemplate(true)
         
         statusItem.image = successIcon
+        statusItem.menu = onlineMenu
         
-        let sec = 30.0
+        let sec = 5.0
         self.timer = NSTimer.scheduledTimerWithTimeInterval(sec, target: self, selector: "onTimerUpdate", userInfo: nil, repeats: true)
         self.timer?.fire()
     }
@@ -45,6 +47,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 //            statusItem.button?.image = failIcon
         }
     }
+    
+    @IBAction func quitOnline(sender: NSMenuItem) {
+        
+        // top; kill
+        NSApplication.sharedApplication().terminate(sender)
+    }
+    
 
 //    @IBAction func menuClicked(sender: NSMenuItem) {
 //
