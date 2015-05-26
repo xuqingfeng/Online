@@ -13,5 +13,5 @@ OS X 10.10.2
 GPLv2
 
 ###TODO
-- [] AppIcon
-- [] Set frequency
+- [ ] Add AppIcon
+- [ ] Set frequency
